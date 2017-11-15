@@ -72,8 +72,8 @@ a:hover {
 
     background-color: rgb(248, 218, 223);
 
-    padding-top: 85px;
-    min-height: 600px;
+    padding: 105px 20px;
+    min-height: 1000px;
 }
 
 
@@ -82,7 +82,13 @@ a:hover {
 /* FOOTERN*/
 
 #footer {
-    background-color: rgb(217, 250, 217)
+    background-color: rgb(217, 250, 217);
+
+    position: fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    height: 85px;
+
 }
 
 #footerStyle {
