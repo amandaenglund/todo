@@ -11,17 +11,28 @@
     <script src="https://use.fontawesome.com/1ea0ded6c7.js"></script>    
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 </head>
 
 <body>
 
     <div id="container">
+
         
         <div id="header">
 
-            <div w3-include-html="meny.html"></div>
-                
+<!--             <div w3-include-html="meny.html"></div>     -->  
+            <ul id="headerStyle">
+                <li><a href="index.html">ToDo</a></li>
+                <li><a href="kontakt.html">Contact</a></li>
+                <li class="nav-right">
+                    <form>
+                        User<input type="text" value="" class="user">
+                        Password<input type="password" value="" class="password">
+                        <button class="loginButton">Login</button>
+                        <button class="logoutButton">Logout</button>            
+                    </form>
+                </li>
+            </ul>         
         </div> <!--stänger header-->
 
         <div id="content">
@@ -44,8 +55,7 @@
     <script>
     w3.includeHTML();
     </script>
-
-    <script src="style.js"></script>
+    <script src="script.js"></script>
             
 </body>
 
