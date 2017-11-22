@@ -48,7 +48,7 @@ body {
 
 }
 
-#header li form {
+#header li #form {
     text-decoration: none;
     color: white;
 
@@ -104,12 +104,12 @@ a:hover {
 #footerStyle a {
     text-decoration: none;
     display: block;
-    color: white;
+    color: black;
   }
 
   #footerStyle li {
     text-decoration: none;
     display: block;
     padding: 3em;
-    color: white;
+    color: black;
   }
