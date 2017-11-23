@@ -8,11 +8,12 @@ $(document).ready(function(){
         "Betala räkningar",
         "Köp mjölk", 
         "Spika upp tavlor",
-        "Mata katten"
+        "Mata guldfisken"
         ];
     
 
-
+        printArray();
+        
     if (sessionStorage.ourUser != null) {
             
         // Är vi inloggade
@@ -32,14 +33,20 @@ $(document).ready(function(){
         if ( $(".user").val() == user && $(".password").val() == password ) {
             // om rätt svar - visa member-sida
             visaMember();
-            
+            // och skriv ut ToDo-list
+
             //printa arrayen - provat denna JQuery-kod som inte funkar
             //$("todo").HTML = stuffToDo;
             
-            var myJSON = JSON.stringify(stuffToDo);
-            document.getElementById("todo").innerHTML = myJSON;
+            // var myJSON = JSON.stringify(stuffToDo);
+            // document.getElementById("todo").innerHTML = myJSON;
 
-        
+            //Jeppe kod
+            // localStorage.setItem("stuffToDo", JSON.stringify(stuffToDo));
+            // stuffToDo = JSON.parse(localStorage.getItem("stuffToDo"));
+            
+            // $.each(stuffToDo, function(index, value) {
+            // $(".stuffList").append("<li>" + value + </li>");
 
         } else {
             // om fel svar - visa forgot-sida
@@ -84,7 +91,7 @@ $(document).ready(function(){
         $(".loginButton").hide();     
         $(".user").hide();     
         $(".password").hide();
-        $(".namn").text($(".user").val());  
+        $("#namn").text($(".user").val());  
         sessionStorage.ourUser = $(".user").val();                   
     };
 
@@ -95,6 +102,34 @@ $(document).ready(function(){
         $("#main").hide();  
         $("#member").hide();    
     };
+
+    //
+    //Print Array funktioner
+    //
+
+    function printArray() {
+        var printToDoList = "";
+        //for är en loop
+        for(var i = 0; i < stuffToDo.length; i++) {
+            printToDoList += "<div>" + stuffToDo[i] + " | <a href='#' onclick='deleteToDo(" + i + ")' >Ta Bort</a> </div>";
+        }
+        document.getElementById("list").innerHTML = printToDoList;
+        document.getElementById("number").innerHTML = stuffToDo.length;
+    }
+    
+
+        $(".addToDoButton").click(function(){
+        stuffToDo.push($(".toDoInput").val());
+        printArray();
+    });
+
+        
+    function deleteToDo(i) {
+        stuffToDo.splice(i,1);
+        printArray();
+    };
+    
+    
 
 });
 
