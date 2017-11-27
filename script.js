@@ -123,11 +123,18 @@ $(document).ready(function(){
         printArray();
     });
 
-        
-    function deleteToDo(i) {
+    
+    deleteToDo = function(i) {
         stuffToDo.splice(i,1);
         printArray();
-    };
+    }
+
+    console.log(deleteToDo);
+
+    // function deleteToDo(i) {
+    //     stuffToDo.splice(i,1);
+    //     printArray();
+    // };
     
     
 
